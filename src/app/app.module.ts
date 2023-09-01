@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CategoriesModule } from './categories/categories.module';
 import { ScategoriesModule } from './scategories/scategories.module';
 import { NavscrollComponent } from './navscroll/navscroll.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,8 +20,10 @@ import { NavscrollComponent } from './navscroll/navscroll.component';
     ProductsModule,
     HttpClientModule,
     CategoriesModule,
-    ScategoriesModule
-  ],
+    ScategoriesModule,
+    FormsModule,
+    ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

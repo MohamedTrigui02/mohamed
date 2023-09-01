@@ -1,0 +1,64 @@
+<button type="button" class="btn btn-primary" (click)="openModal()">
+  <i class="bi bi-plus-circle-fill"></i>
+  Nouveau Scategorie
+  </button>
+  <div class="modal" tabindex="-1"
+  role="dialog" [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+  <div class="modal-content">
+  <div class="modal-header">
+  <h4 class="modal-title">Ajout Scategorie</h4>
+
+  <button type="button" style="color: red;"  class="btn btn-default"
+   aria-label="Close" (click)="closeModal()"><i class="bi bi-x-circle"></i></button>
+
+  </div>
+  <div class="modal-body">
+  <template *ngTemplateOutlet="formProduct"></template>
+  </div>
+  <div class="modal-footer">
+  <button type="button" class="btn btn-default"
+  (click)="closeModal()" >Close</button>
+
+  </div>
+
+  </div>
+  </div>
+  </div>
+  <!-- Form -->
+  <ng-template #formProduct>
+
+    <form (ngSubmit)="ajoutscategorie()">
+
+      <div class="mb-3">
+        <input type="text" class="form-control" id="categorieID" name =
+        "categorieID" placeholder="categorieID" [(ngModel)]=" scategories.scategorieID" >
+
+      </div>
+
+    <div class="mb-3">
+    <input type="text" class="form-control" id="imagescategorie" name =
+    "imagescategorie" placeholder="imagescategorie" [(ngModel)]=" scategories.imagescategorie" >
+
+    </div>
+
+    <div class="mb-3">
+      <input type="text" class="form-control" id="nomscategorie" name =
+      "nomscategorie" placeholder="nomscategorie" [(ngModel)]=" scategories.nomscategorie" >
+
+      </div>
+
+
+
+      <div class="mb-3">
+        <input type="text" class="form-control" id="scategorieID" name =
+        "scategorieID" placeholder="scategorieID" [(ngModel)]=" scategories.scategorieID" >
+
+        </div>
+
+
+      <div>
+          <button type="submit" class="btn btn-success"(clic)="ajoutscategorie()">Enregistrer</button>
+              </div>
+      </form>
+      </ng-template>

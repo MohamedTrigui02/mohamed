@@ -1,0 +1,46 @@
+<button type="button" class="btn btn-primary" (click)="openModal()">
+  <i class="bi bi-plus-circle-fill"></i>
+  Nouveau Produit
+  </button>
+  <div class="modal" tabindex="-1"
+  role="dialog" [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+  <div class="modal-content">
+  <div class="modal-header">
+  <h4 class="modal-title">Ajout Categorie</h4>
+
+  <button type="button" style="color: red;"  class="btn btn-default"
+   aria-label="Close" (click)="closeModal()"><i class="bi bi-x-circle"></i></button>
+
+  </div>
+  <div class="modal-body">
+  <template *ngTemplateOutlet="formProduct"></template>
+  </div>
+  <div class="modal-footer">
+  <button type="button" class="btn btn-default"
+  (click)="closeModal()" >Close</button>
+
+  </div>
+
+  </div>
+  </div>
+  </div>
+  <!-- Form -->
+  <ng-template #formProduct>
+
+    <form (ngSubmit)="ajoutcategorie()">
+    <div class="mb-3">
+    <input type="text" class="form-control" id="nomcategorie" name =
+    "nomcategorie" placeholder="nomcategorie" [(ngModel)]="categories.nomcategorie" >
+
+    </div>
+    <div class="mb-3">
+    <input type="text" class="form-control" id="imagecategorie" name =
+    "imagecategorie" placeholder="imagecategorie" [(ngModel)]="categories.imagecategorie" >
+
+    </div>
+      <div>
+          <button type="submit" class="btn btn-success"(clic)="ajoutcategorie()">Enregistrer</button>
+              </div>
+      </form>
+      </ng-template>

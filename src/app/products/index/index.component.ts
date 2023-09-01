@@ -15,4 +15,10 @@ export class IndexComponent {
     console.log(this.products);
     })
     }
+    delarticle(id:any){
+      this.productsService.deleteArticle(id).subscribe(res => {
+        this.products = this.products.filter(item => item._id !==id);
+
+})
+}
 }

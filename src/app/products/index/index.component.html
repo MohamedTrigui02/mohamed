@@ -1,3 +1,5 @@
+<app-create></app-create>
+
 <table class="table table-striped">
   <thead>
   <tr>
@@ -19,8 +21,8 @@
   <td>{{ product.designation }}</td>
   <td>{{product.qtestock}}</td>
   <td>{{product.prix}}</td>
-  <td><button type="button" class="btn btn-warning">MODIFIER</button></td>
-    <td><button type="button" class="btn btn-danger">SUPPRIMER</button></td>
+  <td><button type="button" class="btn btn-warning" style="color: blue;"><i class="bi bi-pen-fill"></i></button></td>
+    <td><button type="button" class="btn btn-danger" (click)="delarticle(product._id)" ><i class="bi bi-trash3-fill"></i></button></td>
 
 
   </tr>
